@@ -1,14 +1,12 @@
-#pragma once 
-#include "card.h"
-#include <string>
-
-using namespace std;
+#pragma once
+#include "Card.h"
 
 class TrainerCard : public Card {
-protected:
+private:
     string trainerEffect;
-public:
-    TrainerCard(string trainerEffect);
-    void displayInfo();
-}
 
+public:
+    TrainerCard(const string& name, const string& effect);
+    void displayInfo() const override;
+    const string& getEffect() const;
+};

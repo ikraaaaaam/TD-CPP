@@ -1,12 +1,13 @@
-#include "timeseriesgenerator.h"
+#include "TimeSeriesGenerator.h"
+#include <iostream>
 
-using namespace std;
+TimeSeriesGenerator::TimeSeriesGenerator() : seed(0) {}
 
-TimeSeriesGenerator::TimeSeriesGenerator() : seed(0){}
-TimeSeriesGenerator::TimeSeriesGenerator(int s) : seed(s){}
+TimeSeriesGenerator::TimeSeriesGenerator(int seed) : seed(seed) {}
 
-void TimeSeriesGenerator::printTimeSeries(const vector<double> series){
-    for(double value:series){
-        cout << value << endl;
+void TimeSeriesGenerator::printTimeSeries(const vector<double>& series) {
+    for (double value : series) {
+        cout << value << " ";
     }
+    cout << endl;
 }

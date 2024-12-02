@@ -1,11 +1,12 @@
 #pragma once
-#include <string>
-using namespace std;
+#include "Card.h"
 
-class EnergyCard : public Card{
-protected:
+class EnergyCard : public Card {
+private:
     string energyType;
 
 public:
-    EnergyCard(string energyType);
-}
+    EnergyCard(const string& type);
+    void displayInfo() const override;
+    const string& getEnergyType() const;
+};

@@ -1,14 +1,14 @@
-#pragma once 
+#pragma once
 
-using namespace std;
+#include "TimeSeriesGenerator.h"
 
-class SinWaveGenerator : public TimeSeriesGenerator{
+class SinWaveGenerator : public TimeSeriesGenerator {
 private:
-    double A;
-    double w;
+    double amplitude;
+    double frequency;
     double phase;
+
 public:
-    SinWaveGenerator();
-    SinWaveGenerator(double A, double w, double phase);
+    SinWaveGenerator(double amplitude, double frequency, double phase);
     vector<double> generateTimeSeries(int size) override;
-}
+};

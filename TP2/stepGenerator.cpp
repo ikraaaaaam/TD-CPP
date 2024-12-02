@@ -1,16 +1,22 @@
-#include <stepGenerator.h>
-#include <cstdlib>
+#include "StepGenerator.h"
+#include <random>
 
-stepGenerator::stepGenerator():TimeSeriesGenerator(){}
+StepGenerator::StepGenerator() {}
+
 vector<double> StepGenerator::generateTimeSeries(int size) {
     vector<double> series(size);
-    series[0] = 0; 
+    default_random_engine generator(seed);
+    uniform_int_distribution<int> distribution(0, 1);
+
+    series[0] = 0; // Initial value
+
     for (int i = 1; i < size; ++i) {
-        if (rand() % 2) {
-            series[i] = series[i - 1]; 
+        if (distribution(generator)) {
+            series[i] = series[i - 1];
         } else {
-            series[i] = rand() % 101; 
+            series[i] = rand() % 101; // Random value between 0 and 100
         }
     }
+
     return series;
 }

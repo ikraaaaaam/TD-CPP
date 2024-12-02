@@ -1,7 +1,9 @@
-#pragma once 
+#pragma once
 
-using namespace std;
+#include "TimeSeriesGenerator.h"
 
-class StepGenerator : public TimeSeriesGenrator{
-    
-}
+class StepGenerator : public TimeSeriesGenerator {
+public:
+    StepGenerator();
+    vector<double> generateTimeSeries(int size) override;
+};

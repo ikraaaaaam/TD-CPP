@@ -1,11 +1,14 @@
 #pragma once
 #include <string>
-
 using namespace std;
 
-class Card{
+class Card {
 protected:
     string cardName;
+
 public:
-    virtual void displayInfo() const=0;
-}
+    Card(const string& name) : cardName(name) {}
+    virtual ~Card() = default;
+
+    virtual void displayInfo() const = 0;
+};
